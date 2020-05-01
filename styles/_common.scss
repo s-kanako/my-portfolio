@@ -1,0 +1,68 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: $base;
+}
+
+.container {
+    overflow: hidden;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 1080px;
+    max-width: 100%;
+    margin-left: 7.8%;
+    margin-bottom: 120px;
+    margin-top: 50px;
+    position: fixed;
+    z-index: 1000;
+
+}
+a {
+    cursor: pointer;
+}
+
+h1 a {
+    color: $base;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 4.0rem;
+    margin: 30px 0;
+}
+
+section {
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+/* 画面外にいる状態 */
+.fadein {
+	opacity : 0.1;
+	transform : translate(0, 50px);
+	transition : all 500ms;
+	}
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+    }
+    
+.fadeConts {
+    width: 500px;
+    height: 400px;
+    margin: 40px auto;
+    background-color: lightpink;
+    opacity: 0;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+.fadeConts.show {
+    opacity: 1;
+}
