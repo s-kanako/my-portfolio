@@ -9,11 +9,13 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <!-- scroll -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
     <div class="container">
-        <header class="header fadein">
+        <header class="header fix-header">
             <h1><a href="#">KANAKO.</a></h1>
             <div class="toggle">
                 <span></span>
@@ -31,28 +33,33 @@
             </nav>
         </header>
 
-        <section class="mv">
+        <section class="mv block1" id="mv_id">
             <div class="mv_inner">
-                <!-- <div class="mv_img">
-                    <img src="images/macbook-beside-white-notebook-and-pen-3893072.jpg" alt="">
-                </div> -->
                 <div class="mv_txt">
                     <h2 id="typing"></h2>
-                    <!-- <ul class="mv_nav fadein">
+                    <ul class="mv_nav fadein">
                         <li><a href="#about_id">ABOUT</a></li>
                         <li><a href="#works_id">WORKS</a></li>
                         <li><a href="#price_id">PRICEE</a></li>
                         <li><a href="#skills_id">SKILLS</a></li>
                         <li><a href="#contact_id">CONTACT</a></li>
-                    </ul> -->
+                    </ul>
                 </div>
+            </div>
+            <div class="mv_scroll">
+                <a href="#about_id" class="mv_scroll-button">
+                    <span></span>
+                </a>
             </div>
         </section>
 
-        <section class="about" id="about_id">
+        <section class="about block2" id="about_id">
             <div class="about_inner" id="wrapper">
                 <div class="about_txt  slideContsL slideConts">
                     <h2 class="line">ABOUT</h2>
+                    <br>
+                    <h3 style="font-weight: bold; text-align: center;">お客様と"一緒につくる"を大切にしています。</h3>
+                    <br>
                     <p>初めまして。<br>ポートフォリオご覧いただき、ありがとうございます。</p>
                     <p>フリーランスでWEB制作をしております、KANAKO.です。</p>
                     <br>
@@ -60,17 +67,19 @@
                     <p>1995 : 北海道札幌市出身</p>
                     <p>2015 : 広島大学教育学部入学</p>
                     <p>2019 : 広島大学教育学部卒業</p>
-                    
-
                 </div>
                 <div class="about_img slideContsR slideConts">
-                    <img src="images/sugiko1.jpg" alt="me">
+                    <img src="images/kanako.jpg" alt="me">
                     <ul class="about_sns">
                         <li class="sns_icon"><a href="https://www.facebook.com/profile.php?id=100011589241898" target="_blank"><img src="images/fb.jpg"></a></li>
                         <li class="sns_icon"><a href="https://www.instagram.com/__s1026/" target="_blank"><img src="images/insta.png"></a></li>
                         <li class="sns_icon"><a href="https://twitter.com/Kanakowld" target="_blank"><img src="images/twitter.jpg"></a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="arrow-box">
+                <p>scroll</p>
+                <div class="arrow">
             </div>
         </section>
 
@@ -117,9 +126,13 @@
                     <div class="works_box">
                         <figure class="thumbnail-wrapper"><img src="images/works7.jpg" alt=""></figure>
                         <span class="more_txt">MORE</span>
-                        <a href=""></a>
+                        <a href="http://localhost:10020/works-1/"></a>
                     </div>
                 </div>
+            </div>
+            <div class="arrow-box">
+                <p>scroll</p>
+                <div class="arrow">
             </div>
         </section>
 
@@ -155,43 +168,62 @@
                         </ul>
                     </div>
                 </div>
-                <a href="https://github.com/s-kanako" class="skills_icon" target="_blank"><i class="fab fa-2x fa-github"></i>my github.</a>               
-
+                <div class="github">
+                    <a href="https://github.com/s-kanako" class="skills_icon" target="_blank">
+                        <i class="fab fa-2x fa-github"></i>my github.
+                    </a>        
+                </div>       
+            </div>
+            <div class="arrow-box">
+                <p>scroll</p>
+                <div class="arrow">
             </div>
         </section>
 
-        <section class="price" id="price_id">
-            <div class="price_inner">
+        <section class="price" id="price_wrapper">
+            <div class="price_inner slideConts slideContsL">
                 <h2>Price</h2>
-                <div class="price_wrapper ">
+                <div class="price_wrapper">
                     <div class="price_box">
-                        <figure><img src="images/skills.jpg" alt=""></figure>
+                        <figure><img src="images/skills2.jpg" alt=""></figure>
+                        <h3>Cording</h3>
                         <ul class="price_order">
-                            <h3>Cording</h3>
                             <li class="price_item">TOPページ：10,000円〜</li>
                             <li class="price_item">下層ページ：7,000円〜</li>
                         </ul>
                     </div>
                     <div class="price_box">
-                        <figure><img src="images/skills.jpg" alt=""></figure>
+                        <figure><img src="images/skills2.jpg" alt=""></figure>
+                        <h3>Designe</h3>
                         <ul class="price_order">
                             <li class="price_item">TOPページ：30,000円〜</li>
                             <li class="price_item">下層ページ：10,000円〜</li>
                         </ul>
                     </div>
                     <div class="price_box">
-                        <figure><img src="images/skills.jpg" alt=""></figure>
+                        <figure><img src="images/skills2.jpg" alt=""></figure>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="contact" id="contact_id">
+            <h2>CONTACT</h2>
             <div class="contact_inner">
-                <h2>CONTACT</h2>
-                <form action=""></form>
+                <div class="contact_mail">
+                    <img src="images/mail.svg" alt="email">
+                    <p>example@example.com</p>
+                </div>
+                <div class="contact_web">
+                    <img src="images/web.svg" alt="web">
+                    <a href="#">WEBで問い合わせる</a>
+                </div>
             </div>
         </section>
+
+        <footer class="footer">
+            <small><p>©︎copyright2020 All rights reserved Kanako</p></small>
+        </footer>
 
 
 
@@ -200,6 +232,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="script.js"></script>
-    <!-- JS -->
 </body>
 </html>
