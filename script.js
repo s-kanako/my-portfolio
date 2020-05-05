@@ -1,3 +1,32 @@
+// header追従
+$(function () {
+	"use strict";
+	var flag = "view";
+    $(window).on("scroll", function () {
+        // scrollTop()が「200」より大きい場合
+    //画面トップから、ナビゲーションメニューまでの高さ（ピクセル）を指定すれば、メニュースクロールで
+    //消えていくタイミングでヘッダが表示されて固定される。  
+    if ($(this).scrollTop() > 400) {
+        if (flag === "view") {
+            $(".fix-header").stop().css({opacity: '1.0'}).animate({
+        //”▲.fix-header”の部分は固定ヘッダとして表示させるブロックのID名もしくはクラス名に
+            top: 40
+            }, 500);
+            flag = "hide";
+        }
+    } else {
+        if (flag === "hide") {
+            $(".fix-header").stop().animate({top:"-66px",opacity: 0}, 500);
+            //上にあがり切ったら透過度を0%にして背景が生きるように
+            //”▲.fix-header”の部分は固定ヘッダとして表示させるブロックのID名もしくはクラス名に
+            flag = "view";
+            }
+        }
+    });
+    });
+
+
+// toggle
 $(function() {
     $('.toggle').click(function() {
         $(this).toggleClass('active');        
@@ -8,24 +37,25 @@ $(function() {
             $('.navmenu').removeClass('active'); //クラスを外す
         }
     });
+
 });
 
 
-$(function(){
-    $('.about_txt p').addClass('move');
-    $(window).scroll(function(){
-        $(".about_txt").each(function(){
-            var imgPos = $(this).offset().top;    
-            var scroll = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            if (scroll > imgPos - windowHeight + windowHeight/5){
-            $(this).find("p").removeClass('move');
-            } else {
-            $(this).find("p").addClass('move');
-            }
-        });
-    });
-});
+// $(function(){
+//     $('.about_txt p').addClass('move');
+//     $(window).scroll(function(){
+//         $(".about_txt").each(function(){
+//             var imgPos = $(this).offset().top;    
+//             var scroll = $(window).scrollTop();
+//             var windowHeight = $(window).height();
+//             if (scroll > imgPos - windowHeight + windowHeight/5){
+//             $(this).find("p").removeClass('move');
+//             } else {
+//             $(this).find("p").addClass('move');
+//             }
+//         });
+//     });
+// });
 
 
 var slideConts = document.querySelectorAll('.slideConts'); // スライドで表示させる要素の取得
@@ -77,40 +107,6 @@ $(function(){
 });
 
 
-var fadeConts = document.querySelectorAll('.fadeConts'); // フェードさせる要素の取得
-var fadeContsRect = []; // 要素の位置を取得するための配列
-var fadeContsTop = []; // 要素の位置を取得するための配列
-var windowY = window.pageYOffset; // ウィンドウのスクロール位置
-var windowH = window.innerHeight; // ウィンドウの高さ
-var remainder = 100; // ちょっとはみ出させる部分
-// 要素の位置を取得
-    for (var i = 0; i < fadeConts.length; i++) {
-    fadeContsRect.push(fadeConts[i].getBoundingClientRect());
-    }
-    for (var i = 0; i < fadeContsRect.length; i++) {
-    fadeContsTop.push(fadeContsRect[i].top + windowY);
-    }
-    // ウィンドウがリサイズされたら、ウィンドウの高さを再取得
-    window.addEventListener('resize', function () {
-    windowH = window.innerHeight;
-    });
-    // スクロールされたら
-    window.addEventListener('scroll', function () {
-    // スクロール位置を取得
-    windowY = window.pageYOffset;
-    
-    for (var i = 0; i < fadeConts.length; i++) {
-        // 要素が画面の下端にかかったら
-        if(windowY > fadeContsTop[i] - windowH + remainder) {
-        // .showを付与
-        fadeConts[i].classList.add('show');
-        } else {
-        // 逆に.showを削除
-        fadeConts[i].classList.remove('show');
-        }
-    }
-    });
-
 // タイピング風
 const typing = (element, sentence) => {
     [...sentence].forEach((character, index) => {
@@ -120,3 +116,4 @@ const typing = (element, sentence) => {
     });
 }      
 typing('#typing', 'Hello My name is Kanako.');
+
