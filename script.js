@@ -1,3 +1,28 @@
+
+$(function () {
+    var cursor=$(".cursor");
+    //ちょっと遅れてくる要素
+    var follower=$(".follower");
+    //mousemoveイベントでカーソル要素を移動
+    $(document).on("mousemove",function(e){
+        var x=e.pageX;
+        var y=e.pageY;
+        cursor.css({
+            "opacity":"1",
+            "top":y+"px",
+            "left":x+"px"
+        });
+        setTimeout(function(){
+            follower.css({
+                "opacity":"1",
+                "transform":"translate("+x+"px,"+y+"px)"
+            });
+        },100);
+    });
+});
+
+
+
 // header追従
 $(function () {
 	"use strict";

@@ -1,111 +1,5 @@
 
 
-nav.navmenu{
-    position: fixed;
-    z-index: 2; 
-    top: 0; 
-    right: 0; 
-    text-align: left; 
-    width: 50%; 
-    transform: translateY(-140%); 
-    transition: all 0.6s; 
-}
-
-nav.navmenu ul{
-    width: 100%;
-    padding: 0;
-    position: relative;
-    left: 156px;
-}
-
-nav.navmenu ul li{
-    font-size: 1.1em;
-    list-style-type: none;
-    padding: 0;
-    width: 28%;
-    margin: 0 0 0 173px;
-    border-bottom: 3px dotted #333;
-}
-
-nav.navmenu ul li:last-child{
-    padding-bottom: 0;
-}
-
-nav.navmenu ul li a{
-    display: block; 
-    color: #333;
-    font-size: 16px;
-    z-index: 100;
-    
-}
-nav.navmenu ul li a:hover {
-    background-color: $nana-green;
-    color: #fff;
-}
-nav.navmenu li {
-    height: 50px;
-    line-height: 50px;
-}
-
-nav.navmenu.active{
-    transform: translateY(8%);
-}
-
-.toggle {
-    display: block;
-    position: relative;    
-    width: 42px;
-    height: 41px;
-    cursor: pointer;
-    z-index: 3;
-    padding: 5px;
-    bottom: 19px;
-    left: 70px;
-}
-
-.toggle span {
-    display: block;
-    position: absolute;
-    width: 30px;
-    border-bottom: solid 3px #000;
-    -webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
-    -moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
-    transition: .35s ease-in-out;			/*変化の速度を指定*/
-    left: 6px;
-    border: 1px solid #333;
-}
-
-.toggle span:nth-child(1) {
-    top: 9px;
-}
-
-.toggle span:nth-child(2) {
-    top: 18px;
-}
-
-.toggle span:nth-child(3) {
-    top: 27px;
-}
-
-.toggle.active span:nth-child(1) {
-    top: 18px;
-    left: 6px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}  
-.toggle.active span:nth-child(2),
-.toggle.active span:nth-child(3) {
-    top: 18px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-h1 {
-    font-size: 2.0rem;
-    letter-spacing: 5px;
-}
 
 .mv {
     padding-bottom: 120px;
@@ -182,22 +76,44 @@ h1 {
 .about {
     padding-bottom: 120px;
     &_inner {
-        width: 1080px;
         max-width: 100%;
+        display: flex;
+        justify-content: space-between;
         margin: 0 auto;
+        @include sm {
+            flex-direction: column-reverse;
+        }
     }
     &_txt {
         background-color:rgba(192,212,219,0.9);
         padding: 30px 100px 30px 30px;
-        position: relative;
-        right: 51px;
         line-height: 30px;
-        width: 50%;
+        width: 65%;
+        @include sm {
+            margin: auto 0 0 0;
+            position: relative;
+            bottom: 55px;
+        }
+        @include sm {
+            padding-right: 30px;
+        }
+    }
+    &_img {
+        width: 80%;
+        @include sm {
+            margin: 0 0 0 auto;
+        }
+        img {
+            width: 100%;
+        }
     }
     &_sns {
         display: flex;
         width: 150px;
         margin: 0 0 0 auto;
+        @include sm {
+            margin-right: 10px;
+        }
         li {
             margin: 0 0 0 auto;
             img {
@@ -205,14 +121,9 @@ h1 {
             }
         }
     }
-    &_img {
-        position: absolute;
-        top: 0;
-        left:54%;
-        width: 50%;
-        img {
-            width: 100%;
-        }
+    #wrapper {
+        position: relative;
+        overflow: hidden;
     }
 }
 
@@ -226,6 +137,12 @@ h1 {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        @include md {
+            padding: 0 40px;
+        }
+        @include xs {
+            justify-content: center;
+        }
     }
     &_box {
         width: 300px;
@@ -301,19 +218,40 @@ h1 {
     &_inner {
         width: 1080px;
         background-color: #f9f9f9;
-        margin: 0 auto;
+        margin: 30px auto 0 auto;
         max-width: 100%;
-        height: 500px;
         padding-top: 10px;
+        padding-bottom: 50px;
     }
     &_wrapper {
         display: flex;
         justify-content: space-between;
         padding: 0 200px;
+        @include md {
+            padding: 0 150px;
+            margin: 0 auto;
+        }
+        @include sm {
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            justify-content: center;
+        }
+    }
+    &_box {
+        @include sm {
+            padding-bottom: 30px;
+            display: inline-block;
+        }
     }
     &_order {
         li:hover {
             border-bottom: 1px solid #000;
+        }
+    }
+    &_item {
+        @include sm {
+            text-align: center;
         }
     }
     h2 {
@@ -322,6 +260,9 @@ h1 {
     h3 {
         font-weight: bold;
         text-align: left;
+        @include sm {
+            text-align: center;
+        }
     }   
     span {
         display: inline-block;
@@ -334,6 +275,11 @@ h1 {
         width: 200px;
         margin: 50px 0 0 auto;
     }
+    @include sm {
+        .cording_span {
+            left: 30px;
+        }
+    }
 }
 
 .price {
@@ -341,21 +287,53 @@ h1 {
     right: 50px;
     h2 {
         text-align: left;
+        margin: 30px 0 0 0;
+        padding-left: 40px;
     }
     &_inner {
-        width: 1100px;
+        width: 80%;
         max-width: 100%;
         padding: 40px;
         background-color: $nana-green;
+        @include sm {
+            padding: 40px 0 50px 0;
+            width: 100%;
+        }
+        p {
+            margin: 40px;
+        }
     }
     &_wrapper {
         display: flex;
         justify-content: space-between;
+        padding: 40px;
+        @include sm {
+            flex-direction: column;
+        }
     }
     &_box {
         width: 22%;
+        @include sm {
+            width: 50%;
+            margin: 0 auto 50px;
+        }
         img {
             width: 100%;
+        }
+        
+    }
+    &_order {
+        margin-top: 30px;
+        text-align: center;
+        @include sm {
+            margin-top: 0;
+        }
+        li {
+            font-weight: bold;
+            text-align: left;
+            @include sm {
+                text-align: center;
+            }
         }
     }
     #_wrapper {
@@ -371,18 +349,24 @@ h1 {
         text-align: center;
     }
     &_inner {
-        width: 620px;
+        width: 800px;
         max-width: 100%;
         margin: 50px auto;
         display: flex;
         justify-content: space-between;
+        @include md {
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
     }
     &_mail,&_web {
         display: flex;
         align-items: center;
         cursor: pointer;
-        padding: 20px 30px;
-
+        padding: 20px 37px;
+        @include md {
+            margin: 0 auto 30px;
+        }
     }
     &_mail {
         border: 1px solid $nana-pink;
@@ -412,45 +396,40 @@ h1 {
 
 
 .footer {
-    height: 200px;
     background-color: $nana-pink;
     text-align: center;
-
+    &_nav {
+        width: 75%;
+        display: flex;
+        margin-left: 7%;
+        padding-top: 30px;
+        padding-bottom: 200px;
+        position: relative;
+        &-item  {
+            a {
+                color: #fff;
+                padding: 0 10px;
+                font-size: 1.2rem;
+            }
+        }
+        @include sm {
+            margin-left: 0;
+        }
+    }
     p {
         font-size: 1rem;
-        position: relative;
-        top: 160px;
+        padding-bottom: 30px;
         color: #fff;
     }
 }
-
-
-
-#wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 1080px;
-    margin: 0 auto;
-}
-.slideConts {
-    -webkit-transition: .9s;
-    -o-transition: .9s;
-    transition: .9s;
-}
-.slideContsR {
-    transform: translate(800px, 0);
-}  
-.slideContsL {
-    transform: translate(-800px, 0);
-    margin-top: 100px;
-}
-
-.slideContsL.show {
-    transform: translate(50px, 0) !important;
-}
-
-.slideContsR.show {
-    transform: translate(-50px, 0) !important;
+.footer_nav li+li:before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 44px;
+    height: 14px;
+    margin-top: -7px;
+    border-right: 1px solid #fff;
 }
 
 

@@ -14,6 +14,9 @@
 </head>
 
 <body>
+    <div class="cursor"></div>
+    <div class="follower"></div>
+
     <div class="container">
         <header class="header fix-header">
             <h1><a href="#">KANAKO.</a></h1>
@@ -55,10 +58,10 @@
 
         <section class="about block2" id="about_id">
             <div class="about_inner" id="wrapper">
-                <div class="about_txt  slideContsL slideConts">
+                <div class="about_txt slideContsL slideConts">
                     <h2 class="line">ABOUT</h2>
                     <br>
-                    <h3 style="font-weight: bold; text-align: center;">お客様と"一緒につくる"を大切にしています。</h3>
+                    <h3 style="font-weight: bold; text-align: center;">"一緒につくる"を大切にしています。</h3>
                     <br>
                     <p>初めまして。<br>ポートフォリオご覧いただき、ありがとうございます。</p>
                     <p>フリーランスでWEB制作をしております、KANAKO.です。</p>
@@ -86,7 +89,14 @@
         <section class="works fadein" id="works_id">
             <div class="works_inner">
                 <h2>WORKS</h2>
+
                 <div class="works_wrapper">
+                    <div class="works_box">
+                        <figure><img src="../images/pro.jpg" alt=""></figure>
+                        <span class="more_txt">MORE</span>
+                        <a href=""></a>
+                    </div>
+
                     <div class="works_box">
                         <figure class="thumbnail-wrapper"><img src="images/works1.jpg" alt=""></figure>
                         <span class="more_txt">MORE</span>
@@ -128,12 +138,21 @@
                         <span class="more_txt">MORE</span>
                         <a href="http://localhost:10020/works-1/"></a>
                     </div>
+
+                    <div class="works_box">
+                        <figure class="thumbnail-wrapper"><img src="images/works8.jpg" alt=""></figure>
+                        <span class="more_txt">MORE</span>
+                        <a href="http://localhost:10020/works-1/"></a>
+                    </div>
+
+                    <div class="works_box">
+                        <figure class="thumbnail-wrapper"><img src="images/works9.jpg" alt=""></figure>
+                        <span class="more_txt">MORE</span>
+                        <a href="http://localhost:10020/works-1/"></a>
+                    </div>
                 </div>
             </div>
-            <div class="arrow-box">
-                <p>scroll</p>
-                <div class="arrow">
-            </div>
+            
         </section>
 
         <section class="skills fadein" id="skills_id">
@@ -142,7 +161,7 @@
                 <div class="skills_wrapper">
                     <div class="skills_box">
                         <h3>Cording</h3>
-                        <span></span>
+                        <span class="cording_span"></span>
                         <ul class="skills_order">
                             <li class="skills_item">HTML5/CSS3</li>
                             <li class="skills_item">Bootstrap4</li>
@@ -168,42 +187,40 @@
                         </ul>
                     </div>
                 </div>
-                <div class="github">
-                    <a href="https://github.com/s-kanako" class="skills_icon" target="_blank">
-                        <i class="fab fa-2x fa-github"></i>my github.
-                    </a>        
-                </div>       
             </div>
-            <div class="arrow-box">
+            <div class="arrow-box" id="third-scroll">
                 <p>scroll</p>
                 <div class="arrow">
             </div>
         </section>
 
         <section class="price" id="price_wrapper">
-            <div class="price_inner slideConts slideContsL">
+            <div class="price_inner slideConts slideContsP">
                 <h2>Price</h2>
                 <div class="price_wrapper">
                     <div class="price_box">
-                        <figure><img src="images/skills2.jpg" alt=""></figure>
-                        <h3>Cording</h3>
-                        <ul class="price_order">
-                            <li class="price_item">TOPページ：10,000円〜</li>
-                            <li class="price_item">下層ページ：7,000円〜</li>
-                        </ul>
-                    </div>
-                    <div class="price_box">
-                        <figure><img src="images/skills2.jpg" alt=""></figure>
-                        <h3>Designe</h3>
+                        <figure><img src="images/designe.svg" alt=""></figure>
                         <ul class="price_order">
                             <li class="price_item">TOPページ：30,000円〜</li>
                             <li class="price_item">下層ページ：10,000円〜</li>
                         </ul>
                     </div>
                     <div class="price_box">
-                        <figure><img src="images/skills2.jpg" alt=""></figure>
+                        <figure><img src="images/cording1.svg" alt=""></figure>
+                        <ul class="price_order">
+                            <li class="price_item">TOPページ：20,000円〜</li>
+                            <li class="price_item">下層ページ：10,000円〜</li>
+                        </ul>
+                    </div>
+                    <div class="price_box">
+                        <figure><img src="images/cms.svg" alt=""></figure>
+                        <ul class="price_order">
+                            <li class="price_item">TOPページ：20,000円〜</li>
+                            <li class="price_item">下層ページ：10,000円〜</li>
+                        </ul>
                     </div>
                 </div>
+                <p>※上記は目安です。詳細は<a href="#contact_id" style="color: magenta; font-weight: bold;" >こちら</a>からお問い合わせください。</p>
             </div>
         </section>
 
@@ -222,6 +239,13 @@
         </section>
 
         <footer class="footer">
+            <ul class="footer_nav">
+                <li class="footer_nav-item"><a href="#about_id">About</a></li>
+                <li class="footer_nav-item"><a href="#works_id">Works</a></li>
+                <li class="footer_nav-item"><a href="#skills_id">Skills</a></li>
+                <li class="footer_nav-item"><a href="#price_id">Price</a></li>
+                <li class="footer_nav-item"><a href="#contact_id">Contact</a></li>
+            </ul>
             <small><p>©︎copyright2020 All rights reserved Kanako</p></small>
         </footer>
 
@@ -231,6 +255,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    
 </body>
 </html>
